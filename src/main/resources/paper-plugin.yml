@@ -1,0 +1,28 @@
+name: '[TRFP] TaCZ-Remake-For-Paper'
+version: '${version}'
+main: studio.lrxmc.trfp.TRFPPlugin
+api-version: '1.21'
+author: Lrxmcstudio (Lrx)
+description: Lrxmcstudio 工作室 Lrx 移植自 TACZ 的 Paper 1.21.1 枪械插件。
+website: ''
+folia-supported: false
+load: POSTWORLD
+libraries: []
+depend: []
+softdepend:
+  - packetevents
+commands:
+  trfp:
+    description: TRFP 主命令
+    aliases: [tacz]
+    usage: /trfp <subcommand>
+permissions:
+  trfp.admin:
+    description: TRFP 管理员权限
+    default: op
+  trfp.give:
+    description: 允许使用 /trfp give
+    default: op
+  trfp.reload:
+    description: 允许使用 /trfp reload
+    default: op

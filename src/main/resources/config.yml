@@ -1,0 +1,36 @@
+# [TRFP] TaCZ-Remake-For-Paper 配置
+# 作者: Lrxmcstudio (Lrx)
+# 文档: https://github.com/MCModderAnchor/TACZ (上游) → Paper 1.21.1 移植
+
+combat:
+  # 基础伤害倍率
+  damage-multiplier: 1.0
+  # 爆头倍率
+  headshot-multiplier: 2.0
+  # 基础护甲穿透
+  armor-ignore-base: 0.0
+  # 最高射速限制 (RPM)
+  fire-rate-cap: 1200
+  # 默认散布(枪械数据未填时使用)
+  default-inaccuracy: 1.0
+  # 默认后坐力
+  default-recoil: 1.0
+  # 弹匣容量上限(防作弊)
+  magazine-size-cap: 200
+
+resource-pack:
+  # 是否启用资源包托管
+  enabled: true
+  # 是否强制安装
+  force: true
+  # 自定义提示消息
+  prompt-message: "§a[TRFP] §f服务器请求安装资源包以显示所有枪械贴图与音效。\n§7  Author: §fLrxmcstudio (Lrx)"
+  # 可选外部 URL (留空使用内置 jar 资源包)
+  url: ""
+  hash: ""
+
+debug:
+  enabled: false
+  log-shoot: false
+  log-reload: false
+  log-bullet: false

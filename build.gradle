@@ -1,0 +1,52 @@
+plugins {
+    id 'java'
+}
+
+group = 'studio.lrxmc.trfp'
+version = '1.0.0'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url = 'https://repo.papermc.io/repository/maven-public/' }
+    maven { url = 'https://oss.sonatype.org/content/repositories/snapshots/' }
+}
+
+dependencies {
+    compileOnly files('/tmp/paper-api-jar')
+    compileOnly files('/tmp/annotations.jar')
+    compileOnly files('/tmp/adventure-api.jar')
+    compileOnly files('/tmp/adventure-key.jar')
+    compileOnly files('/tmp/bungeecord-chat.jar')
+    compileOnly files('/tmp/guava.jar')
+}
+
+processResources {
+    filesMatching('paper-plugin.yml') {
+        expand version: project.version
+    }
+}
+
+jar {
+    archiveBaseName = 'TRFP-TaCZ-Remake-For-Paper'
+    archiveVersion = project.version
+    archiveClassifier = ''
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    manifest {
+        attributes([
+            'Implementation-Title': project.name,
+            'Implementation-Version': project.version,
+            'Built-By': 'Lrxmcstudio (Lrx)'
+        ])
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
